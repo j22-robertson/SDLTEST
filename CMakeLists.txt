@@ -15,6 +15,7 @@ FetchContent_Declare(
         GIT_REPOSITORY https://github.com/libsdl-org/SDL.git
         GIT_TAG a8589a84226a6202831a3d49ff4edda4acab9acd
 )
+set(SDL_SHARED OFF CACHE BOOL "" FORCE)
 set(SDL_STATIC ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(SDL3)
 
@@ -23,6 +24,12 @@ FetchContent_Declare(
         GIT_REPOSITORY https://github.com/libsdl-org/SDL_image.git
         GIT_TAG 45a898564b3450c49023c282b5e60ee85598755d
 )
+
+
+set(SDL3IMAGE_INSTALL OFF CACHE BOOL "" FORCE)
+set(SDL3IMAGE_VENDORED ON CACHE BOOL "" FORCE)
+set(SDL3IMAGE_BACKEND_STB ON CACHE BOOL "" FORCE)
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(SDL_image)
 FetchContent_Declare(
         box2d

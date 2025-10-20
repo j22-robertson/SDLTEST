@@ -6,6 +6,7 @@
 
 #include "box2d/box2d.h"
 #include "cmake-build-debug/_deps/box2d-src/src/world.h"
+#include "core/Texture.h"
 
 SDL_Window* window;
 SDL_Renderer* renderer;
@@ -22,7 +23,8 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
 
     b2WorldDef world_def = b2DefaultWorldDef();
     world_def.gravity = (b2Vec2){0.0f,-10.0f};
-
+    Texture texture;
+    texture.LoadFromFile("../assets/images/sprite.png",renderer);
     world_id = b2CreateWorld(&world_def);
     return SDL_APP_CONTINUE;
 }

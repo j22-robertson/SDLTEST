@@ -24,6 +24,7 @@ public:
                        height = loaded_surface->h;
                    }
                    SDL_DestroySurface(loaded_surface);
+                   std::cout << "IMG_Load succeeded" << std::endl;
                }
            }
        }
