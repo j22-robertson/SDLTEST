@@ -29,6 +29,7 @@ FetchContent_Declare(
         GIT_REPOSITORY https://github.com/erincatto/box2d.git
         GIT_TAG 8c661469c9507d3ad6fbd2fea3f1aa71669c2fe3
 )
+set(BOX2D_BUILD_SAMPLES OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(box2d)
 target_link_libraries(SDLTEST PUBLIC SDL3::SDL3)
 target_include_directories(SDLTEST PUBLIC ${SDL_SOURCE_DIR}/include)
@@ -40,5 +41,6 @@ target_link_libraries(SDLTEST PUBLIC box2d::box2d)
 target_include_directories(SDLTEST PUBLIC ${box2d_SOURCE_DIR}/include)
 
 add_subdirectory(core)
+
 target_link_libraries(SDLTEST PUBLIC CORE)
 target_include_directories(SDLTEST PUBLIC ${PROJECT_SOURCE_DIR}/core)
