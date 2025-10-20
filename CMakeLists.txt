@@ -39,5 +39,5 @@ target_include_directories(SDLTEST PUBLIC ${CMAKE_SOURCE_DIR}/deps/Imgui)
 target_link_libraries(SDLTEST PUBLIC box2d::box2d)
 target_include_directories(SDLTEST PUBLIC ${box2d_SOURCE_DIR}/include)
 
-
+add_subdirectory(core)
 
